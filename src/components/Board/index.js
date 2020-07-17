@@ -257,6 +257,7 @@ function BoardContainer({
               disableCardDrag={disableCardDrag}
               onCardNew={onCardNew}
               allowAddCard={allowAddCard}
+              droppableType={column.type}
             >
               {column}
             </Column>

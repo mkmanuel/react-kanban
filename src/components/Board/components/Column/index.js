@@ -20,6 +20,7 @@ function Column({
   disableCardDrag,
   onCardNew,
   allowAddCard,
+  droppableType
 }) {
   return (
     <Draggable draggableId={`column-draggable-${children.id}`} index={columnIndex} isDragDisabled={disableColumnDrag}>
@@ -42,7 +43,7 @@ function Column({
           >
             <div {...columnProvided.dragHandleProps}>{renderColumnHeader(children)}</div>
             {allowAddCard && <CardAdder column={children} onConfirm={onCardNew} />}
-            <DroppableColumn droppableId={String(children.id)}>
+            <DroppableColumn droppableId={String(children.id)} type={droppableType}>
               {children.cards.length ? (
                 children.cards.map((card, index) => (
                   <Card
